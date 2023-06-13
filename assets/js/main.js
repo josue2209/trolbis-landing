@@ -6,7 +6,7 @@ const header = document.getElementById("header"),
 
 
 window.addEventListener("scroll", () => {
-  if (window.scrollY > 80) {
+  if (window.scrollY > 70) {
     header.classList.add("header--scroll");
   } else {
     header.classList.remove("header--scroll");
@@ -127,3 +127,4 @@ sr.reveal(".title--home", {interval: 200, origin: "right" });
 sr.reveal(".mask", { origin: "top" });
 sr.reveal(".video", {origin: "top" });
 sr.reveal(".social-1", {origin: "right" });
+

@@ -178,7 +178,6 @@
     top: 64%;
     left: 41%;
     bottom: 0;
-    transform: rotate(-5deg);
     gap: 30px;
     align-items: center;
 }
@@ -203,6 +202,7 @@
     box-shadow: var(--shadow-primary);
     font-size: 13px;
     animation: btn-animate 2s infinite;
+    margin-top: 30px;
 }
 
 @keyframes btn-animate{
@@ -236,6 +236,11 @@
         margin-top: 20px;
     }
 
+    .content--precio{
+        left: 25%;
+    }
+    
+
     .rafting{
         top: -75px;
         right: -120px;
@@ -252,7 +257,7 @@
 
     .content_title img{
         width: 100%;
-        height: 95px;
+        height: 130px;
         margin-top: -55px;
         transform: rotate(-3deg);
         margin-bottom: -10px;
@@ -266,26 +271,27 @@
     }
 
     .content-button img{
-        width: 85px;
+        width: 100px;
         height: 70px;
     }
 
     .content-button{
-        margin-top: -145%;
-        transform: rotate(-5deg);
+        margin-top: -105%;
     }
 
     .btn-reserva{
         width: 120px;
         height: 35px;
         font-size: 9px;
+        margin-top: 0px;
+        margin-bottom: 20px;
     }
 
     .content--sub--anuncio{
-        gap: 5px; 
+        gap: 3px; 
         right: 0%;
         left: 60px;
-        bottom: 21%;
+        bottom: 17%;
     }
 
     .content--info{

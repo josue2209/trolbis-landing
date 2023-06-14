@@ -124,7 +124,20 @@ sr.reveal(".content--wrap_2", { origin: "right" });
 sr.reveal(".info", { origin: "left" });
 sr.reveal(".content--map .title--home", { origin: "right" });
 sr.reveal(".title--home", {interval: 200, origin: "right" });
-sr.reveal(".mask", { origin: "top" });
-sr.reveal(".video", {origin: "top" });
-sr.reveal(".social-1", {origin: "right" });
+// sr.reveal(".promo", {interval: 2000, origin: "top" });
+// sr.reveal(".mask", { origin: "top" });
+// sr.reveal(".video", {origin: "top" });
 
+
+window.onload =()=>{
+  setTimeout(() => {
+    let promo = document.getElementById("promo");
+    promo.style = "margin-top: 50px;  transition: ease-in-out 2s"
+    console.log("josue");
+  }, 2000);
+}
+
+function closePromo(){
+  let promo = document.getElementById("promo");
+  promo.style = "display: none"
+}

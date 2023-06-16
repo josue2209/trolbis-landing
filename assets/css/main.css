@@ -124,6 +124,16 @@ body {
   margin-top: var(--height-header);
 }
 
+.logo-prin{
+  width: 130px;
+  height: 130px;
+}
+
+.logo-prin2{
+  width: 130px;
+  height: 130px;
+  margin-top: -40px;
+}
 
 .section {
   padding: 12rem 0 8rem;
@@ -1430,6 +1440,7 @@ footer{
 @media screen and (max-width: 420px) {
   .content--map iframe{
   width: 350px;
+  height: 300px;
 }
 
 .home{

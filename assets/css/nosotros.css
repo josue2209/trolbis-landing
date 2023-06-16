@@ -1,0 +1,357 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
+:root {
+  /* Colors
+  ___________________*/
+  --color-primary: #26a0d5;
+  --color-primary-light: #0083b3  ;
+  --color-white: #fff;
+  --color-title: #115798;
+  --color-text: #adb1b4;
+  --bg-gradient: linear-gradient(180deg, #ffffff 0%, #d6f7ff 100%);
+  /* Typography
+  ___________________*/
+  --font-family-primary: "Poppins", sans-serif;
+  --font-family-secondary: "Rubik", sans-serif;
+  --font-family-third:'Pacifico', cursive;
+  /* font sizes */
+  --fs-xs: 1.2rem;
+  --fs-sm: 1.4rem;
+  --fs-md: 1.6rem;
+  --fs-lg: 1.8rem;
+  --fs-xl: 2rem;
+  --fs-xxl: clamp(2.4rem, 5vw, 2.8rem); 
+  --fs-biggest: clamp(3.2rem, 5vw, 6rem);
+  /* font weight */
+  --fw-regular: 400;
+  --fw-medium: 500;
+  --fw-semibold: 600;
+  --fw-bold: 700;
+
+  /* z-index
+  ___________________*/
+  --zindex-fixed: 1000;
+  --zindex-menu: 1010;
+
+  /* Width & Height 
+  ------------------*/
+  --width-container: 100rem;
+  --height-header: 10rem;
+
+  /* Transition and box shadow*/
+  --transition: 0.4s ease-in-out;
+  --shadow-primary: 0px 10px 30px 5px rgba(0, 0, 0, 0.05);
+  --shadow-header: 0px 2px 5px rgba(0, 0, 0, 0.05);
+
+  /* Border Radius */
+  --border-radius-sm: 1rem;
+  --border-radius-lg: 2rem;
+
+  /* box-shadow */
+  --shadow-primary: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+
+}
+
+
+
+*{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+	font-size: var(--font-family-primary);
+}
+
+
+/* ---------------------- */
+.avion{
+	width: 20px;
+	height: 20px;
+	left: 49.5%;
+	right: 50%;
+	margin-top: 80px;
+	position: absolute;
+	z-index: 1000;
+	animation: avion 30s ease-out infinite;
+}
+
+@keyframes avion{
+	0%
+	{
+		transform: translateY(2750px);
+		
+	}
+	50%
+	{
+		transform: translateY(-10px);
+	}
+	100%
+	{
+		transform: translateY(2750px);
+	}
+}
+
+
+.hero {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	min-height: 25vh;
+	font-size: 36px;
+}
+
+.container2 {
+	width: 90%;
+	max-width: 1200px;
+	margin: 100px auto;
+	display: flex;
+	flex-direction: column;
+	position: relative;
+	align-items: center;
+}
+
+.container2::after {
+	content: "";
+	width: 2px;
+	height: 100%;
+	background: var(--color-primary);
+	position: absolute;
+	top: 0;
+	left: calc(50% - 1px);
+	z-index: 1;
+}
+
+.evento {
+	display: flex;
+	justify-content: space-between;
+	margin-bottom: 170px;
+	position: relative;
+}
+
+.evento::after {
+	content: "";
+	display: block;
+	width: 14px;
+	height: 14px;
+	border-radius: 100px;
+	background: var(--color-primary-light);
+	border: 2px solid #47d4ff;
+	position: absolute;
+	z-index: 2;
+	top: calc(50% - 8px);
+	left: calc(50% - 8px);
+}
+
+.fecha {
+	display: flex;
+	align-items: center;
+	justify-content: start;
+	font-size: 30px;
+	font-weight: normal;
+}
+
+.foto {
+	width: 42%;
+	border: 10px solid #fff;
+	position: relative;
+	box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+	border-radius: 10px;
+}
+
+.foto::after {
+	content: "";
+	display: block;
+	border: 20px solid transparent;
+	border-left: 20px solid #fff;
+	position: absolute;
+	right: -50px;
+	top: calc(50% - 20px);
+}
+
+.foto img {
+	width: 100%;
+	vertical-align: top;
+	border-radius: 10px;
+}
+
+.evento:nth-child(even) {
+	flex-direction: row-reverse;
+}
+
+.evento:nth-child(even) .fecha {
+	justify-content: end;
+}
+
+.evento:nth-child(even) .foto::after {
+	content: "";
+	border: 20px solid transparent;
+	border-right: 20px solid #fff;
+	right: initial;
+	left: -50px;
+}
+
+.row{
+	display: flex;
+	z-index: 1000;
+	font-size: 30px;
+	color:var(--color-text);
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+	left: 50%;
+	right: 50%;
+	margin-top: 25%;
+	font-size: 50px;
+	position: absolute;
+	cursor: pointer;
+	/* background-color: #ffffff; */
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+}
+
+.row i{
+	animation: icon 2s ease-out infinite;
+	margin-bottom: -35px;
+	color: #fff;
+	text-shadow: 0 20px 30px rgba(0,0,0);
+}
+
+.historia{
+	margin-top: 150px;
+	transition: var(--transition);
+}
+
+@keyframes icon{
+	0%
+	{
+		transform: translateY(5px);
+	}
+	50%
+	{
+		transform: translateY(-5px);
+	}
+	100%
+	{
+		transform: translateY(5px);
+	}
+}
+
+.swiper {
+	display: flex;
+	flex:  1 0 auto;
+	width: 50%;
+	height: 100%;
+  }
+
+
+  .swiper-wrapper{
+	padding: 0 0 25px 0;
+	margin-top: 10px;
+  }
+  
+  .swiper-slide {
+	display: flex;
+	text-align: center;
+	width: 250px;
+	height: 300px;
+	font-size: 18px;
+	background:var(--color-white);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-radius: var(--border-radius-lg);
+	flex-direction: column;
+	box-shadow: var(--shadow-primary);
+	margin-bottom: 20px;
+  }
+
+  .swiper-slide::before{
+	content: '';
+	position: absolute;
+	background:var(--color-primary-light);
+	width: 50px;
+	height: 50px;
+	border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+	left: 50px;
+	opacity: .2;
+  }
+
+  .swiper-slide::after{
+	content: '';
+	position: absolute;
+	background:var(--color-primary-light);
+	width: 30px;
+	height: 30px;
+	border-radius: 30% 70% 16% 84% / 66% 30% 70% 34%;
+	top: 40px;
+	right:60px;
+	opacity: .2;
+  }
+  
+  .team{
+	margin-bottom: 100px;
+  }
+
+  .conten-social{
+	margin-top: 10px;
+  }
+
+  .conten-social i{
+	color: var(--color-primary-light);
+  }
+
+  .puesto{
+	font-family: var(--font-family-secondary);
+	font-size: var(--fs-sm);
+  }
+
+  .img--team{ 
+	display: flex;
+	width: 130px;
+	height: 130px;
+	border-radius: 50%;
+	border: solid 3px var(--color-primary);
+	padding: 1px;
+	margin-bottom: 10px;
+	z-index: 3; 
+	object-fit: cover;
+  }
+
+
+
+
+@media screen and (max-width: 420px) {
+	.fecha {
+		font-size: 15px;
+	}
+
+	.content-info-history{
+		display: flex;
+		flex-direction: column;
+	}
+
+	.text-info{
+		font-size: 10.5px;
+		color: var(--color-primary);
+	
+	}
+
+	.avion{
+		left: 47.8%;
+	}
+
+	.hero{
+		font-size: 30px;
+	}
+
+	.row{
+		top: 55%;
+		left: 43%;
+		font-size: 45px;
+	}	
+
+	.swiper {
+		width: 100%;
+	  }
+	
+}

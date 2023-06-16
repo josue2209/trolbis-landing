@@ -33,11 +33,11 @@ navLinks.forEach((link) => {
 });
 
 
-let swiper = new Swiper(".destination__wrapper", {
+let swiper = new Swiper(".destination__wrapper",{
   loop: true,
   slidesPerView: "auto",
   centeredSlides: true,
-  spaceBetween: 32,
+  spaceBetween: 45,
   grabCursor: true,
   navigation: {
     nextEl: ".swiper__next",
@@ -48,17 +48,20 @@ let swiper = new Swiper(".destination__wrapper", {
 
 const video = document.getElementById("video-tour"),
   videoBtn = document.getElementById("video-btn"),
-  videoIcon = document.getElementById("video-icon");
+  videoIcon = document.getElementById("video-icon"),
+  title_video = document.getElementById("title-tours")
 
 function videoState() {
   if (video.paused) {
     
     video.play();
     videoIcon.classList.replace("ri-play-fill", "ri-pause-fill");
+    title_video.style = "display: none";
   } else {
    
     video.pause();
     videoIcon.classList.replace("ri-pause-fill", "ri-play-fill");
+    title_video.style = "display: block";
   }
 }
 
@@ -124,8 +127,7 @@ sr.reveal(".content--wrap_2", { origin: "right" });
 sr.reveal(".info", { origin: "left" });
 sr.reveal(".content--map .title--home", { origin: "right" });
 sr.reveal(".title--home", {interval: 200, origin: "right" });
-// sr.reveal(".promo", {interval: 2000, origin: "top" });
-// sr.reveal(".mask", { origin: "top" });
+sr.reveal(".social-1", { origin: "right" });
 // sr.reveal(".video", {origin: "top" });
 
 
@@ -141,3 +143,5 @@ function closePromo(){
   let promo = document.getElementById("promo");
   promo.style = "display: none"
 }
+
+

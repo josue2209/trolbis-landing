@@ -178,4 +178,18 @@ botonAceptar.addEventListener('click', () => {
   dataLayer.push({'event' : 'cookies-aceptadas'})
 });
 
+let cookies = document.getElementById('cookies')
+let termino = document.getElementById('termino')
+let politica = document.getElementById('politica')
+let tituloVariable = document.getElementById('title-variable')
+
+
+
+
+function Rediric() {
+  cookies = location.href = "./cookies.html#cookies";
+  termino.style.display = "none"
+  politica.style.display = "none"
+  tituloVariable.innerHTML = josue
+}
 

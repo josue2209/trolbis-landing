@@ -97,6 +97,7 @@
     font-size: var(--font-family-secondary);
     text-align: justify;
     font-size: var(--fs-sm);
+    padding-left: 25px;
 }
 
 .negrita{
@@ -106,5 +107,9 @@
 @media screen and ( max-width: 420px) {
     .container--cookies{
        width: 90%;
+    }
+
+    .titulo--cookies{
+        font-size: 14px;
     }
 }

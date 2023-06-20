@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
+:root {
+  /* Colors
+  ___________________*/
+  --color-primary: #26a0d5;
+  --color-primary-light: #0083b3  ;
+  --color-white: #fff;
+  --color-title: #115798;
+  --color-text: #adb1b4;
+  --bg-gradient: linear-gradient(180deg, #ffffff 0%, #d6f7ff 100%);
+  /* Typography
+  ___________________*/
+  --font-family-primary: "Poppins", sans-serif;
+  --font-family-secondary: "Rubik", sans-serif;
+  --font-family-third:'Pacifico', cursive;
+  /* font sizes */
+  --fs-xs: 1.2rem;
+  --fs-sm: 1.4rem;
+  --fs-md: 1.6rem;
+  --fs-lg: 1.8rem;
+  --fs-xl: 2rem;
+  --fs-xxl: clamp(2.4rem, 5vw, 2.8rem); 
+  --fs-biggest: clamp(3.2rem, 5vw, 6rem);
+  /* font weight */
+  --fw-regular: 400;
+  --fw-medium: 500;
+  --fw-semibold: 600;
+  --fw-bold: 700;
+
+  /* z-index
+  ___________________*/
+  --zindex-fixed: 1000;
+  --zindex-menu: 1010;
+
+  /* Width & Height 
+  ------------------*/
+  --width-container: 100rem;
+  --height-header: 10rem;
+
+  /* Transition and box shadow*/
+  --transition: 0.4s ease-in-out;
+  --shadow-primary: 0px 10px 30px 5px rgba(0, 0, 0, 0.05);
+  --shadow-header: 0px 2px 5px rgba(0, 0, 0, 0.05);
+
+  /* Border Radius */
+  --border-radius-sm: 1rem;
+  --border-radius-lg: 2rem;
+
+  /* box-shadow */
+  --shadow-primary: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+}
+
+*{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+	font-size: var(--font-family-primary);
+}
+
+.container--cookies{
+    display: flex;
+    width: 50%;
+    height: auto;
+    background:var(--color-white);
+    box-shadow: var(--shadow-primary);
+    border-radius: var(--border-radius-lg);
+    flex-direction: column;
+    padding: 20px;
+    gap: 15px;
+    margin: 40px;
+}
+
+.cookies{
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.content--info--cookies{
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+    gap: 15px;
+}
+
+.titulo--cookies{
+    font-family: var(--font-family-primary);
+    font-size: var(--fs-md);
+    line-height: 1.5;
+}
+
+.texto--cookies{
+    font-family: var(--font-family-secondary);
+    font-size: var(--font-family-secondary);
+    text-align: justify;
+    font-size: var(--fs-sm);
+}
+
+.negrita{
+    color:rgba(0, 0, 0, 0.6);
+}
+
+@media screen and ( max-width: 420px) {
+    .container--cookies{
+       width: 90%;
+    }
+}

@@ -12,6 +12,14 @@
     <meta name="robots" content="index, nofollow, max-image-preview:large">
     <meta name="geo.position" content="18.498852, -69.826279">
     <meta name="audience" content="all">
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-54QM2VH');
+    </script>
+    <!-- End Google Tag Manager -->
     <link rel="icon" href="./assets/img/icono.ico" type="image/x-icon" sizes="200x200" >
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -22,8 +30,12 @@
     <link rel="stylesheet" href="./assets/css/anuncio.css">
     <title>Trolbis Agency | Agencia de viajes | Santo Domingo | RD</title>
 </head>
-
 <body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-54QM2VH"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <!-- End Google Tag Manager (noscript) -->
 
     <header id="header" class="header">
         <nav class="nav container">
@@ -69,9 +81,11 @@
 
     <main class="main">
         <div class="promo" id="promo">
-            <a class="btn_promo" href="./anuncio.html"> <i class="ri-error-warning-fill"></i>Mas Informacion</a>
             <img class="byggy2" src="./assets/img/Buggy.png" alt="">
-            <i class="ri-close-fill close_promo" id="closePromo" onclick="closePromo()"></i>
+            <div class="content--btn-promo">
+                <a class="btn_promo" href="./anuncio.html"> <i class="ri-error-warning-fill"></i>Mas Informacion</a>
+                <button class="btn_promo2" id="btn_promo"><i class="ri-close-circle-fill"></i>Quitar Anuncio</button>
+            </div>
         </div>
         <section id="home" class="home">
             <video src="./assets/video/video-fondo.mp4" autoplay loop playsinline muted type="video/mp4" class="video" ></video>
@@ -323,7 +337,7 @@
                 <div class="container--villa">
                     <div class="content-wrap_1">
                         <img src="./assets/img/villa-trolbis.jpg" alt="">
-                        <a href="./villa.html" class="btn-gallery-villa">
+                        <a href="#" class="btn-gallery-villa">
                             <i class="ri-information-fill"></i>
                             Mas informacion
                         </a>
@@ -409,6 +423,23 @@
         </section>
     </main>
 
+
+    <div class="aviso-cookies" id="aviso-cookies">
+        <h3 class="titulo">cookies</h3>
+        <div class="content-cookies-img">
+            <div class="content-cookies">
+                <p class="parrafo">Este sitio web utiliza cookies propias y de terceros para mejorar la experiencia en nuestra pagina.</p>
+                <div class="content-btn-cookies">
+                    <button class="boton" id="btn-aceptar-cookis">Aceptar</button>
+                    <a class="enlace" href="./cookies.html">Referencias</a>
+                </div>
+            </div>
+            <img src="./assets/img/galleta.svg" alt="" class="img-cookies">
+        </div>
+    </div>
+
+    <div class="fondo-aviso-cookies" id="fondo-aviso-cookies"></div>
+
     <footer class="footer">
         <div class="d-grid footer__wrapper container">
             <div class="footer__content">
@@ -444,7 +475,7 @@
                 </div>
             </div>
             <div class="footer__content">
-                <h4 class="footer__title">Links</h4>
+                <h4 class="footer__title">PLATAFORMA</h4>
                 <ul class="footer__list">
                     <li class="footer__item">
                         <a href="#home" class="footer__link">
@@ -484,13 +515,8 @@
                 </ul>
             </div>
             <div class="footer__content">
-                <h4 class="footer__title">Compañia</h4>
+                <h4 class="footer__title">EMPRESA</h4>
                 <ul class="footer__list">
-                    <li class="footer__item">
-                        <a href="#" class="footer__link">
-                            Terminos Y Condiciones
-                        </a>
-                    </li>
                     <li class="footer__item">
                         <a href="#" class="footer__link">
                             Politica Y Privacidad
@@ -498,26 +524,32 @@
                     </li>
                     <li class="footer__item">
                         <a href="#" class="footer__link">
+                            Terminos de uso
+                        </a>
+                    </li>
+                    <li class="footer__item">
+                        <a href="./cookies.html" class="footer__link">
                             Uso cookies
                         </a>
                     </li>
                 </ul>
             </div>
             <div class="footer__content">
-                <h4 class="footer__title">Soporte</h4>
+                <h4 class="footer__title">SOPORTE</h4>
                 <ul class="footer__list">
                     <li class="footer__item">
-                        <a href="#" class="footer__link">
+                        <a href="#home" class="footer__link">
                             Ayuda
                         </a>
                     </li>
                     <li class="footer__item">
-                        <a href="./contacto.html" class="footer__link">
+                        <a href="#about" class="footer__link">
                             Contactos
                         </a>
                     </li>
                 </ul>
             </div>
+        </div>
         </div>
         <p class="footer__copyright container">
             Copyright © Trolbis Travel Agency 2023. All Rights Reserved

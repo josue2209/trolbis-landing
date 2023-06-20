@@ -128,20 +128,54 @@ sr.reveal(".info", { origin: "left" });
 sr.reveal(".content--map .title--home", { origin: "right" });
 sr.reveal(".title--home", {interval: 200, origin: "right" });
 sr.reveal(".social-1", { origin: "right" });
+sr.reveal(".aviso-cookies", { origin: "left" });
 // sr.reveal(".video", {origin: "top" });
+
+
+
+let promo = document.getElementById("promo");
+let botonPromo = document.getElementById('btn_promo')
 
 
 window.onload =()=>{
   setTimeout(() => {
-    let promo = document.getElementById("promo");
     promo.style = "margin-top: 50px;  transition: ease-in-out 2s"
-    console.log("josue");
   }, 2000);
 }
 
-function closePromo(){
-  let promo = document.getElementById("promo");
-  promo.style = "display: none"
+if (!localStorage.getItem('promo-aceptada')) {
+  promo.classList.add('activo2');
 }
+
+botonPromo.addEventListener('click',()=>{
+  promo.classList.remove('activo2');
+  localStorage.setItem('promo-aceptada',true);
+})
+
+
+
+
+const botonAceptar = document.getElementById('btn-aceptar-cookis')
+const avisoCookies = document.getElementById('aviso-cookies')
+const fondoAviso = document.getElementById('fondo-aviso-cookies')
+
+dataLayer = [];
+
+if ( !localStorage.getItem('cookies-aceptadas')) {
+  
+  avisoCookies.classList.add('activo')
+  fondoAviso.classList.add('activo')
+}else{
+  dataLayer.push({'event' : 'cookies-aceptadas'})
+}
+
+botonAceptar.addEventListener('click', () => {
+  avisoCookies.classList.remove('activo');
+  fondoAviso.classList.remove('activo');
+
+  localStorage.setItem('cookies-aceptadas',true);
+
+  dataLayer.push({'event' : 'cookies-aceptadas'})
+});
 
 

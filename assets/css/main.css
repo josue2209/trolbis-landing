@@ -1223,7 +1223,7 @@ footer{
   align-items: center;
   justify-content: center;
   font-weight: var(--fw-semibold);
-  font-size: 17px;
+  font-size: 14px;
   border-radius: var(--border-radius-sm);
   color: var(--color-white);
   box-shadow: var(--shadow-primary);
@@ -1237,8 +1237,8 @@ footer{
 
 .airbnb img{
   display: flex;
-  width: 20px;
-  height: 20px;
+  width: 18px;
+  height: 18px;
 }
 
 .whatsapp{
@@ -1250,7 +1250,7 @@ footer{
   align-items: center;
   justify-content: center;
   font-weight: var(--fw-semibold);
-  font-size: 17px;
+  font-size: 14px;
   border-radius: var(--border-radius-sm);
   color: var(--color-white);
   box-shadow: var(--shadow-primary);
@@ -1262,7 +1262,7 @@ footer{
 }
 
 .whatsapp i{
-  font-size: 25px;
+  font-size: 20px;
 }
 
 .content--map{

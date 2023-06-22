@@ -401,7 +401,7 @@ body {
 .destination__item {
   position: relative;
   width: 100%;
-  max-width: 40rem;
+  max-width: 30rem;
   border-radius: var(--border-radius-lg);
   overflow: hidden;
   margin: auto;
@@ -872,6 +872,8 @@ footer{
 
   .content--map iframe{
     width: 200px;
+
+    
   }
 
   .title-tours{
@@ -889,10 +891,74 @@ footer{
     box-shadow: var(--shadow-primary);
   }
 
+  .swiper__prev{
+    animation: movimiento 2s infinite ease-out;
+  }
+
+  .swiper__next{
+    animation: movimiento 2s infinite ease-out;
+  }
+
+  .swiper__navigation {
+    padding: 10px;
+    gap: 30px;
+  }
+
+
+  @keyframes movimiento{
+    0%
+    {
+      transform:scale(1);
+    }
+    50%
+    {
+      transform:scale(1.2);
+    }
+
+    100%
+    {
+      transform:scale(1);
+    }
+    
+  }
+
+
 }
 
 
 @media screen and (min-width: 768px) {
+  .swiper__prev{
+    animation: movimiento 2s infinite ease-out;
+  }
+
+  .swiper__next{
+    animation: movimiento 2s infinite ease-out;
+  }
+
+  @keyframes movimiento{
+    0%
+    {
+      transform:scale(1);
+    }
+    50%
+    {
+      transform:scale(1.2);
+    }
+
+    100%
+    {
+      transform:scale(1);
+    }
+    
+  }
+
+  .swiper__navigation {
+    padding: 10px;
+    gap: 30px;
+  }
+
+
+
   .home__wrapper {
     grid-template-columns: repeat(2, 1fr);
     align-items: center;
@@ -920,9 +986,7 @@ footer{
     order: -1;
   }
 
-  .swiper__navigation {
-    justify-content: flex-end;
-  }
+  
 
   .discover__wrapper {
     grid-template-columns: repeat(2, max-content);
@@ -957,7 +1021,8 @@ footer{
   }
 
   .destination__wrapper {
-    max-width: 85rem;
+    max-width: 55%;
+    padding: 10px;
   }
 
   .discover__wrapper {

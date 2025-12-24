@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Online Learning Platform</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&amp;display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet" />
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#15803d",
+                        "primary-hover": "#166534",
+                        "background-light": "#ffffff",
+                        "background-dark": "#18181b",
+                        "surface-light": "#EFF6FF",
+                        "surface-dark": "#EFF6FF",
+                        "azul-trolbis": "#079ddb"
+                    },
+                    fontFamily: {
+                        display: ["Poppins", "sans-serif"],
+                        body: ["Poppins", "sans-serif"],
+                    },
+                    borderRadius: {
+                        DEFAULT: "0.5rem",
+                    },
+                },
+            },
+        };
+    </script>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+
+<body
+    class="bg-background-light dark:bg-background-dark text-gray-800 dark:text-gray-100 min-h-screen transition-colors duration-300 p-3">
+    <nav class="container mx-auto py-12 flex justify-between items-center">
+        <div class="flex items-center gap-2">
+            <div class="w-8 h-8 bg-azul-trolbis rounded-full flex items-center justify-center text-white font-bold"><i
+                    class="ri-store-3-line"></i>
+            </div>
+            <span class="text-xl font-bold tracking-tight text-gray-700 dark:text-white">TROLBIS ACADEMY</span>
+        </div>
+        <div class="flex items-center gap-4">
+            <button class=" rounded-full transition-colors" onclick="document.documentElement.classList.toggle('dark')">
+                <span class="material-icons-round text-gray-600 dark:text-gray-300">brightness_4</span>
+            </button>
+            <a href="/index.html"
+                class="bg-azul-trolbis text-white px-5 py-2 rounded-full text-sm font-normal hover:bg-azul-trolbis/90 transition-colors">
+                Inicio
+            </a>
+        </div>
+    </nav>
+    <main class="container mx-auto space-y-12">
+        <section
+            class="bg-azul-trolbis  dark:bg-azul-trolbis rounded-lg p-8 md:p-12 lg:p-16 relative overflow-hidden flex flex-col md:flex-row items-center justify-between gap-8 border border-transparent dark:border-white/20">
+            <div class="w-full items-center flex flex-col  z-10 space-y-6 ">
+                <h1 class="text-xl md:text-3xl font-normal text-white dark:text-white leading-tight">
+
+                    ¿Qué quieres aprender hoy?
+                </h1>
+                <div class="relative w-full max-w-xl ">
+                    <input id="searchInput"
+                        class="w-full pl-6 pr-14 py-3 rounded-md border-none shadow-md focus:ring-2 focus:ring-primary bg-white dark:bg-white dark:text-white placeholder-gray-400 text-lg transition-all"
+                        placeholder="Buscar curso" type="text" />
+
+                    <button
+                        class="absolute right-2 top-2 bottom-2 bg-azul-trolbis px-3  text-white rounded-md  flex items-center justify-center transition-colors">
+                        <i class="ri-search-line"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="absolute right-0 top-0 w-64 h-64 bg-blue-200/50 dark:bg-blue-800/20 rounded-full blur-3xl
+            -translate-y-1/2 translate-x-1/2">
+            </div>
+            <div
+                class="absolute left-10 bottom-0 w-32 h-32 bg-blue-200/50 dark:bg-blue-800/20 rounded-full blur-2xl translate-y-1/2">
+            </div>
+        </section>
+        <section class="space-y-6">
+            <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+                <h2 class="text-2xl font-bold text-gray-900 dark:text-white">CURSOS RECOMENDADOS</h2>
+                <div class="relative flex gap-3 pb-2 hide-scrollbar">
+                    <!-- TODOS -->
+                    <button id="btnAll"
+                        class="px-5 py-2 rounded-full text-sm font-medium border whitespace-nowrap transition-colors flex items-center gap-2 ">
+                        Todos los cursos
+                    </button>
+
+                    <!-- CATEGORIAS -->
+                    <div class="relative">
+                        <button id="btnCategory"
+                            class="px-5 py-2 rounded-full text-sm font-medium border border-gray-300 dark:border-zinc-600 text-gray-600 dark:text-gray-300 hover:border-azul-trolbis hover:text-azul-trolbis bg-white dark:bg-zinc-800 whitespace-nowrap transition-colors flex items-center gap-2">
+                            Categoría
+                            <i class="ri-arrow-down-s-line"></i>
+                        </button>
+
+                        <!-- DROPDOWN CORREGIDO -->
+                        <div id="categoryDropdown"
+                            class="hidden absolute left-0 mt-2 w-56 bg-white dark:bg-zinc-800 border border-gray-200 dark:border-zinc-700 rounded-xl shadow-lg z-50">
+                            <!-- Opciones se generan desde JS -->
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div id="coursesGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-6">
+                <!-- Cursos generados por JS -->
+            </div>
+        </section>
+
+        <div class="flex justify-center mt-6">
+            <button id="btnLoadMore"
+                class="px-6 py-2 rounded-full bg-azul-trolbis text-white text-sm font-medium hover:bg-azul-trolbis/90 transition">
+                Cargar mas
+            </button>
+        </div>
+    </main>
+    <footer class="border-t border-gray-200 dark:border-zinc-800 mt-20 bg-gray-50 dark:bg-zinc-900 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-gray-500 dark:text-gray-400 text-sm">
+            <p>© Copyright Trolbis Travel Agency 2025. All Rights Reserved</p>
+        </div>
+    </footer>
+
+    <script src="./assets/js/helper.js"></script>
+</body>
+
+</html>

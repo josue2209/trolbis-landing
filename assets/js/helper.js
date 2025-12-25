@@ -237,8 +237,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const WHATSAPP_NUMBER = "18097564122";
 
 
-
-
     window.openWhatsApp = function (curso) {
         const message = `
         Hola!!
@@ -261,7 +259,7 @@ document.addEventListener("DOMContentLoaded", () => {
     ======================= */
     function getBgColor(color) {
         return document.documentElement.classList.contains("dark")
-            ? color + "99"
+            ? color + "66"
             : color;
     }
 
@@ -285,6 +283,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
+
     /* =======================
        RENDER CURSOS (PAGINADO)
     ======================= */
@@ -293,6 +292,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         if (reset) currentIndex = 0;
         currentCursos = listaCursos;
+        window.currentCursos = currentCursos;
 
         const slice = currentCursos.slice(0, currentIndex + cursosToShow);
 
@@ -303,7 +303,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     <h3 class="text-lg font-bold text-white uppercase">
                         ${curso.tituloCorto}
                     </h3>
-                    <p class="text-white/80 text-xs ">${curso.subtitulo}</p>
+                    <p class="text-white/80 text-xs ">${curso.subtitulo} </p>
                     <div class="absolute right-3 top-3">
                         <i class="${curso.icono} text-white/60 bg-white/20 p-1.5 rounded-full text-2xl"></i>
                     </div>
@@ -435,9 +435,10 @@ document.addEventListener("DOMContentLoaded", () => {
         renderCursosPaginated(currentCursos);
     });
 
-    /* =======================
-       INIT
-    ======================= */
+    // 👇 EXPONER FUNCIONES / ESTADO PARA HTML (dark toggle)
+    window.renderCursosPaginated = renderCursosPaginated;
+
+    // INIT
     renderCategorias();
     renderCursosPaginated(cursosTrolbisAcademy, true);
     setButtonStates("all");

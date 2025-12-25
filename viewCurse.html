@@ -55,24 +55,30 @@
     class="bg-background-light dark:bg-background-dark text-gray-800 dark:text-gray-100 min-h-screen transition-colors duration-300 p-3">
     <nav class="container mx-auto py-12 flex justify-between items-center">
         <div class="flex items-center gap-2">
-            <div class="w-8 h-8 bg-azul-trolbis rounded-full flex items-center justify-center text-white font-bold"><i
-                    class="ri-store-3-line"></i>
+            <div
+                class="w-8 h-8 bg-azul-trolbis dark:bg-azul-trolbis/40 rounded-full flex items-center justify-center text-white font-bold">
+                <i class="ri-store-3-line"></i>
             </div>
             <span class="text-xl font-bold tracking-tight text-gray-700 dark:text-white">TROLBIS ACADEMY</span>
         </div>
         <div class="flex items-center gap-4">
-            <button class=" rounded-full transition-colors" onclick="document.documentElement.classList.toggle('dark')">
-                <span class="material-icons-round text-gray-600 dark:text-gray-300">brightness_4</span>
+            <button class="rounded-full transition-colors" onclick="
+        document.documentElement.classList.toggle('dark');
+        renderCursosPaginated(currentCursos, true);
+    ">
+                <span class="material-icons-round text-gray-600 dark:text-gray-300">
+                    brightness_4
+                </span>
             </button>
             <a href="/index.html"
-                class="bg-azul-trolbis text-white px-5 py-2 rounded-full text-sm font-normal hover:bg-azul-trolbis/90 transition-colors">
+                class="bg-azul-trolbis dark:bg-azul-trolbis/40 text-white px-5 py-2 rounded-full text-sm font-normal hover:bg-azul-trolbis/90 transition-colors">
                 Inicio
             </a>
         </div>
     </nav>
     <main class="container mx-auto space-y-12">
         <section
-            class="bg-azul-trolbis  dark:bg-azul-trolbis rounded-lg p-8 md:p-12 lg:p-16 relative overflow-hidden flex flex-col md:flex-row items-center justify-between gap-8 border border-transparent dark:border-white/20">
+            class="bg-azul-trolbis  dark:bg-azul-trolbis/40 rounded-lg p-8 md:p-12 lg:p-16 relative overflow-hidden flex flex-col md:flex-row items-center justify-between gap-8 border border-transparent dark:border-white/20">
             <div class="w-full items-center flex flex-col  z-10 space-y-6 ">
                 <h1 class="text-xl md:text-3xl font-normal text-white dark:text-white leading-tight">
 
@@ -80,13 +86,13 @@
                 </h1>
                 <div class="relative w-full max-w-xl ">
                     <input id="searchInput"
-                        class="w-full pl-6 pr-14 py-3 rounded-md border-none shadow-md focus:ring-2 focus:ring-primary bg-white dark:bg-white dark:text-white placeholder-gray-400 text-lg transition-all"
+                        class="w-full pl-6 pr-14 py-3 rounded-md border-none shadow-md  bg-white dark:bg-white dark:text-white placeholder-gray-400 text-lg transition-all"
                         placeholder="Buscar curso" type="text" />
 
-                    <button
+                    <!-- <button
                         class="absolute right-2 top-2 bottom-2 bg-azul-trolbis px-3  text-white rounded-md  flex items-center justify-center transition-colors">
                         <i class="ri-search-line"></i>
-                    </button>
+                    </button> -->
                 </div>
             </div>
             <div class="absolute right-0 top-0 w-64 h-64 bg-blue-200/50 dark:bg-blue-800/20 rounded-full blur-3xl
@@ -98,7 +104,9 @@
         </section>
         <section class="space-y-6">
             <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
-                <h2 class="text-2xl font-bold text-gray-900 dark:text-white">CURSOS RECOMENDADOS</h2>
+                <h2 class="text-2xl font-bold text-gray-900 dark:text-white"> <i
+                        class="ri-list-indefinite pr-1"></i>CURSOS DISPONIBLES
+                </h2>
                 <div class="relative flex gap-3 pb-2 hide-scrollbar">
                     <!-- TODOS -->
                     <button id="btnAll"
@@ -131,7 +139,7 @@
 
         <div class="flex justify-center mt-6">
             <button id="btnLoadMore"
-                class="px-6 py-2 rounded-full bg-azul-trolbis text-white text-sm font-medium hover:bg-azul-trolbis/90 transition">
+                class="px-6 py-2 rounded-full bg-azul-trolbis dark:bg-azul-trolbis/40 text-white text-sm font-medium hover:bg-azul-trolbis/90 transition">
                 Cargar mas
             </button>
         </div>
